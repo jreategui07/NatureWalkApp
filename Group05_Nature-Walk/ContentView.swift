@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var loginManager = LoginManager()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+//            if loginManager.currentUser != nil { // Displaying SessionsListScreen if there is a logged in user
+//                SessionsListScreen(loginManager: loginManager, isLoggedIn: true)
+//            } else {
+//                // if there is not logged in user go to LoginScreen
+                LoginScreen(loginManager: loginManager)
+//            }
     }
 }
 
