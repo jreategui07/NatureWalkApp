@@ -28,7 +28,6 @@ struct SessionsListScreen: View {
                             }
                         }
                     }
-                    .onDelete(perform: sessionManager.deleteSession)
                 }
             }
             .overlay(
