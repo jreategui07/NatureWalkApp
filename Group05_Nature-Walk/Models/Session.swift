@@ -14,24 +14,16 @@ class Session: Identifiable, Codable {
     var description: String
     var rating: Float
     var guideName: String
-    var photo: String
+    var photos: [String]
     var pricePerPerson: Double
     var isFavorite: Bool = false
     
-    init(name: String, description: String, rating: Float, guideName: String, photo: String, pricePerPerson: Double) {
+    init(name: String, description: String, rating: Float, guideName: String, photos: [String], pricePerPerson: Double) {
         self.name = name
         self.description = description
         self.rating = rating
         self.guideName = guideName
-        self.photo = photo
+        self.photos = photos
         self.pricePerPerson = pricePerPerson
-    }
-    
-    func toggleFavorite() {
-        isFavorite.toggle()
-    }
-    
-    func share() {
-        // TODO: logic to share content of the session
     }
 }

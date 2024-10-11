@@ -12,25 +12,46 @@ struct SessionDetailsScreen: View {
     @State var session: Session
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 20) {
-            AsyncImage(url: URL(string: session.photo)) { phase in
-                switch phase {
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(maxWidth: .infinity)
-                            .cornerRadius(12)
-                    case .empty:
-                    Image(systemName: "photo.on.rectangle.angled")
-                    case .failure(_ ):
-                    Image(systemName: "photo.on.rectangle.angled")
-                    default:
-                    Image(systemName: "photo.on.rectangle.angled")
+        VStack(alignment: .leading, spacing: 15) {
+            TabView {
+                ForEach(session.photos, id: \.self) { photoURL in
+                    AsyncImage(url: URL(string: photoURL)) { phase in
+                        switch phase {
+                            case .success(let image):
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(maxWidth: .infinity, maxHeight: 300)
+                                    .clipped()
+                            case .empty:
+                            Image(systemName: "photo.on.rectangle.angled")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(maxWidth: .infinity, maxHeight: 300)
+                                    .cornerRadius(20)
+                                    .clipped()
+                            case .failure(_):
+                                Image(systemName: "photo.on.rectangle.angled")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(maxWidth: .infinity, maxHeight: 300)
+                                    .cornerRadius(20)
+                                    .clipped()
+                            default:
+                                    Image(systemName: "photo.on.rectangle.angled")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(maxWidth: .infinity, maxHeight: 300)
+                                    .cornerRadius(20)
+                                    .clipped()
+                        }
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: 300)
+                    .clipped()
                 }
             }
-            .frame(maxWidth: .infinity, alignment: .center)
-            .listRowInsets(EdgeInsets())
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+            .frame(height: 300)
             
             Text(session.description)
                 .font(.body)
@@ -106,12 +127,13 @@ struct SessionDetailsScreen: View {
 }
 
 #Preview {
-    SessionDetailsScreen(session: Session(
-        name: "Mountain Exploration",
-        description: "A thrilling walk through the mountains, perfect for adventure seekers.",
-        rating: 4.8,
-        guideName: "John Doe",
-        photo: "https://img.freepik.com/premium-photo/inspiring-travel-adventure-mountain-exploration_985067-1306.jpg",
-        pricePerPerson: 50.0
-    )).environmentObject(SessionManager())
+    SessionDetailsScreen(session: Session(name: "Mountain Exploration",
+      description: "A thrilling walk through the mountains, perfect for adventure seekers.",
+      rating: 4.8,
+      guideName: "John Doe",
+      photos: [
+          "https://img.freepik.com/premium-photo/inspiring-travel-adventure-mountain-exploration_985067-1306.jpg",
+          "https://media.istockphoto.com/id/612619528/photo/hippie-woman-stroll-on-mountain.jpg?s=612x612&w=0&k=20&c=itnF_PSwxpOZGwi6_bEN217prgXIKNNN2UZzIpYLsNk="
+      ],
+      pricePerPerson: 50.0)).environmentObject(SessionManager())
 }
