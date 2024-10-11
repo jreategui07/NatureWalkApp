@@ -5,7 +5,7 @@
 //  Created by Jonathan Reátegui on 2024-10-09.
 //
 
-import SwiftUI
+import Foundation
 
 class SessionManager: ObservableObject {
     @Published var allSessions: [Session] = []
