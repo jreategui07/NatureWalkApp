@@ -60,4 +60,9 @@ class SessionManager: ObservableObject {
         }
         persistenceManager.saveFavoriteSessions(favoriteSessions)
     }
+    
+    func deleteAllFavoriteSessions() {
+        favoriteSessions.removeAll()
+        persistenceManager.saveFavoriteSessions(favoriteSessions)
+    }
 }

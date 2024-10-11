@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FavoritesListScreen: View {
     @EnvironmentObject var sessionManager: SessionManager
+    @State private var clearFavoriteList = false
 
     var favoriteSessions: [Session] {
         return sessionManager.favoriteSessions
@@ -16,8 +17,27 @@ struct FavoritesListScreen: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
+            VStack(alignment: .leading) {
                 List {
+                    if (!favoriteSessions.isEmpty) {
+                        Button {
+                            clearFavoriteList = true
+                        } label: {
+                            Text("Clear All")
+                                .font(.subheadline)
+                                .foregroundColor(.red)
+                        }
+                        .alert(isPresented: $clearFavoriteList) {
+                            Alert(
+                                title: Text("Are you sure you want to clear al your favorite list?"),
+                                primaryButton: .destructive(Text("Yes")) {
+                                    sessionManager.deleteAllFavoriteSessions()
+                                },
+                                secondaryButton: .cancel(Text("No"))
+                            )
+                        }
+                    }
+                    
                     ForEach(favoriteSessions) { session in
                         NavigationLink(destination: SessionDetailsScreen(session: session)) {
                             HStack {

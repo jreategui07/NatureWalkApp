@@ -42,7 +42,6 @@ struct HomeScreen: View {
                     } label: {
                         Text("Sign Out")
                             .font(.subheadline)
-                            .foregroundColor(.red)
                     }
                     .alert(isPresented: $showLogoutConfirmation) {
                         Alert(
