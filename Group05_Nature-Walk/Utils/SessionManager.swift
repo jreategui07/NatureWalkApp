@@ -31,7 +31,7 @@ class SessionManager: ObservableObject {
                     description: "Enjoy a serene walk along the river, perfect for nature lovers.",
                     rating: 4.6,
                     guideName: "Emily Brown",
-                    photo: "https://images.squarespace-cdn.com/content/v1/5c3b68ae3917ee2af342b59d/1595692874908-ZAPVUZMIHZHFSKXL729L/thumbnail_13E931E5-0A1B-426D-8077-CDB1190C4C69.jpg",
+                    photo: "https://i.pinimg.com/564x/fc/e3/a6/fce3a67885194f1aad99942b298e0018.jpg",
                     pricePerPerson: 35.0),
         ]
         favoriteSessions = persistenceManager.getFavoriteSessions()
