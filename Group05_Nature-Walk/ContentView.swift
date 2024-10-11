@@ -12,12 +12,14 @@ struct ContentView: View {
     @ObservedObject var loginManager = LoginManager()
     
     var body: some View {
-//            if loginManager.currentUser != nil { // Displaying SessionsListScreen if there is a logged in user
-//                SessionsListScreen(loginManager: loginManager, isLoggedIn: true)
-//            } else {
-//                // if there is not logged in user go to LoginScreen
-                LoginScreen(loginManager: loginManager)
-//            }
+        /**
+         Uncomenting this code, we can automatically go to the home screen if the user is logged in
+         */
+//        if loginManager.currentUser != nil {
+//            HomeScreen(loginManager: loginManager, isLoggedIn: true)
+//        } else {
+            LoginScreen(loginManager: loginManager)
+//        }
     }
 }
 

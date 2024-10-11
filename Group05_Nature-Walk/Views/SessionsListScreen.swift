@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SessionsListScreen: View {
-    @State var filterFavorites: Bool = false
     @EnvironmentObject var sessionManager: SessionManager
 
     var allSessions: [Session] {
