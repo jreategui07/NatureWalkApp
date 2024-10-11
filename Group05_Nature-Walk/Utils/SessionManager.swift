@@ -37,11 +37,6 @@ class SessionManager: ObservableObject {
         favoriteSessions = persistenceManager.getFavoriteSessions()
     }
 
-    func addSession(_ session: Session) {
-        allSessions.append(session)
-        persistenceManager.saveSession(session)
-    }
-
     func updateSession(_ session: Session) {
         if let index = allSessions.firstIndex(where: { $0.id == session.id }) {
             allSessions[index] = session

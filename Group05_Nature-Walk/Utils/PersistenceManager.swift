@@ -31,14 +31,6 @@ class PersistenceManager {
     func clearUser() {
         userDefaults.removeObject(forKey: userKey)
     }
-    
-    func saveSession(_ session: Session) {
-        var allSessions = getAllSessions()
-        allSessions.append(session)
-        if let encoded = try? JSONEncoder().encode(allSessions) {
-            userDefaults.set(encoded, forKey: sessionKey)
-        }
-    }
 
     func getAllSessions() -> [Session] {
         if let savedData = userDefaults.data(forKey: sessionKey),
