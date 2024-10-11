@@ -15,21 +15,21 @@ struct HomeScreen: View {
     
     var body: some View {
         NavigationStack {
-            VStack(alignment: .leading, spacing: 20) {
+            VStack {
                 TabView {
                     SessionsListScreen()
                         .tabItem {
                             Image(systemName: "list.bullet")
                             Text("All Sessions")
                         }
-                    FavoritesListScreen()
+                    SessionsListScreen(filterFavorites: true)
                         .tabItem {
                             Image(systemName: "star.fill")
                             Text("Favorites Sessions")
                         }
                 }
             }
-            .padding()
+            .navigationBarTitle("Nature Walk")
             .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
@@ -62,6 +62,28 @@ struct HomeScreen: View {
 }
 
 #Preview {
-    let loginManager = LoginManager()
-    return HomeScreen(loginManager: loginManager, isLoggedIn: true)
+    HomeScreen(loginManager: LoginManager(), isLoggedIn: true).environmentObject(SessionManager())
+}
+
+#Preview {
+    let previewSessionManager = SessionManager()
+    previewSessionManager.allSessions = [
+        Session(
+            name: "Mountain Exploration",
+            description: "A thrilling walk through the mountains, perfect for adventure seekers.",
+            rating: 4.8,
+            guideName: "John Doe",
+            photo: "mountain_photo",
+            pricePerPerson: 50.0
+        ),
+        Session(
+            name: "City Park Stroll",
+            description: "A relaxing walk through the city's largest park, great for families.",
+            rating: 4.2,
+            guideName: "Jane Smith",
+            photo: "city_park_photo",
+            pricePerPerson: 20.0
+        )
+    ]
+    return HomeScreen(loginManager: LoginManager(), isLoggedIn: true).environmentObject(previewSessionManager)
 }

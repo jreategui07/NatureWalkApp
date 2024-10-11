@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B4FC6E92CB8F84D00E80265 /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4FC6E82CB8F84D00E80265 /* enums.swift */; };
 		2B95C29A2CB74B670054F7E7 /* Group05_Nature_WalkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B95C2992CB74B670054F7E7 /* Group05_Nature_WalkApp.swift */; };
 		2B95C29C2CB74B670054F7E7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B95C29B2CB74B670054F7E7 /* ContentView.swift */; };
 		2B95C29E2CB74B680054F7E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B95C29D2CB74B680054F7E7 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B4FC6E82CB8F84D00E80265 /* enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enums.swift; sourceTree = "<group>"; };
 		2B95C2962CB74B670054F7E7 /* Group05_Nature-Walk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Group05_Nature-Walk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B95C2992CB74B670054F7E7 /* Group05_Nature_WalkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group05_Nature_WalkApp.swift; sourceTree = "<group>"; };
 		2B95C29B2CB74B670054F7E7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +54,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B4FC6E72CB8F81700E80265 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2B4FC6E82CB8F84D00E80265 /* enums.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		2B95C28D2CB74B670054F7E7 = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +83,7 @@
 			children = (
 				2B95C2B52CB74F710054F7E7 /* Views */,
 				2B95C2AE2CB74DA80054F7E7 /* Utils */,
+				2B4FC6E72CB8F81700E80265 /* Common */,
 				2B95C2A72CB74CB00054F7E7 /* Models */,
 				2B95C2992CB74B670054F7E7 /* Group05_Nature_WalkApp.swift */,
 				2B95C29B2CB74B670054F7E7 /* ContentView.swift */,
@@ -196,6 +207,7 @@
 				2B95C2AD2CB74D950054F7E7 /* SessionManager.swift in Sources */,
 				2B95C29C2CB74B670054F7E7 /* ContentView.swift in Sources */,
 				2B95C2B42CB74DE80054F7E7 /* PersistenceManager.swift in Sources */,
+				2B4FC6E92CB8F84D00E80265 /* enums.swift in Sources */,
 				2B95C29A2CB74B670054F7E7 /* Group05_Nature_WalkApp.swift in Sources */,
 				2B95C2F52CB8D2B10054F7E7 /* HomeScreen.swift in Sources */,
 				2B95C2A92CB74CE40054F7E7 /* User.swift in Sources */,
