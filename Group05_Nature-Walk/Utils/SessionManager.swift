@@ -49,6 +49,7 @@ class SessionManager: ObservableObject {
             persistenceManager.deleteFavoriteSession(withID: sessionID)
         }
         favoriteSessions.remove(atOffsets: offsets)
+        persistenceManager.saveFavoriteSessions(favoriteSessions)
     }
     
     func toggleFavorite(_ session: Session) {
