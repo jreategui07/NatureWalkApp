@@ -48,17 +48,17 @@ class PersistenceManager {
         return []
     }
     
-    func deleteSession(withID id: UUID) {
-        var allSessions = getAllSessions()
-        allSessions.removeAll { $0.id == id }
-        if let encoded = try? JSONEncoder().encode(allSessions) {
-            userDefaults.set(encoded, forKey: sessionKey)
-        }
-    }
-    
     func saveFavoriteSessions(_ favorites: [Session]) {
         if let encoded = try? JSONEncoder().encode(favorites) {
             userDefaults.set(encoded, forKey: favoritesKey)
+        }
+    }
+    
+    func deleteFavoriteSession(withID id: UUID) {
+        var favoriteSessions = getFavoriteSessions()
+        favoriteSessions.removeAll { $0.id == id }
+        if let encoded = try? JSONEncoder().encode(favoriteSessions) {
+            userDefaults.set(encoded, forKey: sessionKey)
         }
     }
 

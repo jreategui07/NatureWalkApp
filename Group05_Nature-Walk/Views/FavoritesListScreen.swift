@@ -27,7 +27,7 @@ struct FavoritesListScreen: View {
                             }
                         }
                     }
-                    .onDelete(perform: sessionManager.deleteSession)
+                    .onDelete(perform: sessionManager.deleteFavoriteSession)
                 }
             }
             .overlay(

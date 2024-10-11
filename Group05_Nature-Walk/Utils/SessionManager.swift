@@ -42,18 +42,18 @@ class SessionManager: ObservableObject {
         persistenceManager.saveSession(session)
     }
 
-    func deleteSession(at offsets: IndexSet) {
-        offsets.forEach { index in
-            let sessionID = allSessions[index].id
-            persistenceManager.deleteSession(withID: sessionID)
-        }
-        allSessions.remove(atOffsets: offsets)
-    }
-
     func updateSession(_ session: Session) {
         if let index = allSessions.firstIndex(where: { $0.id == session.id }) {
             allSessions[index] = session
         }
+    }
+    
+    func deleteFavoriteSession(at offsets: IndexSet) {
+        offsets.forEach { index in
+            let sessionID = favoriteSessions[index].id
+            persistenceManager.deleteFavoriteSession(withID: sessionID)
+        }
+        favoriteSessions.remove(atOffsets: offsets)
     }
     
     func toggleFavorite(_ session: Session) {
