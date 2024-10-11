@@ -12,24 +12,28 @@ struct HomeScreen: View {
     @Environment(\.dismiss) var dismiss
     @State var isLoggedIn: Bool
     @State private var showLogoutConfirmation = false
+    @State private var selectedTab: HomeTab = .allSessions
     
     var body: some View {
         NavigationStack {
             VStack {
-                TabView {
+                TabView(selection: $selectedTab) {
                     SessionsListScreen()
                         .tabItem {
                             Image(systemName: "list.bullet")
                             Text("All Sessions")
                         }
+                        .tag(HomeTab.allSessions)
                     SessionsListScreen(filterFavorites: true)
                         .tabItem {
                             Image(systemName: "star.fill")
                             Text("Favorites Sessions")
                         }
+                        .tag(HomeTab.favoriteSessions)
                 }
             }
-            .navigationBarTitle("Nature Walk")
+            .navigationTitle(navigationTitle(for: selectedTab))
+            .navigationBarTitleDisplayMode(.large)
             .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
@@ -51,6 +55,15 @@ struct HomeScreen: View {
                     }
                 }
             }
+        }
+    }
+    
+    private func navigationTitle(for tab: HomeTab) -> String {
+        switch tab {
+        case .allSessions:
+            return "All Sessions"
+        case .favoriteSessions:
+            return "Favorite Sessions"
         }
     }
     
