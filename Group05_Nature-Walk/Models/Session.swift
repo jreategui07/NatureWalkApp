@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 class Session: Identifiable, Codable {
     var id = UUID()
