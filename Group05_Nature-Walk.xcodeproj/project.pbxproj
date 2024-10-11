@@ -13,15 +13,14 @@
 		2B95C2A12CB74B680054F7E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B95C2A02CB74B680054F7E7 /* Preview Assets.xcassets */; };
 		2B95C2A92CB74CE40054F7E7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B95C2A82CB74CE40054F7E7 /* User.swift */; };
 		2B95C2AB2CB74D5E0054F7E7 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B95C2AA2CB74D5E0054F7E7 /* Session.swift */; };
-		2B95C2AD2CB74D950054F7E7 /* SessionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B95C2AC2CB74D950054F7E7 /* SessionList.swift */; };
+		2B95C2AD2CB74D950054F7E7 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B95C2AC2CB74D950054F7E7 /* SessionManager.swift */; };
 		2B95C2B02CB74DC10054F7E7 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B95C2AF2CB74DC10054F7E7 /* LoginManager.swift */; };
-		2B95C2B22CB74DD60054F7E7 /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B95C2B12CB74DD60054F7E7 /* FavoritesManager.swift */; };
 		2B95C2B42CB74DE80054F7E7 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B95C2B32CB74DE80054F7E7 /* PersistenceManager.swift */; };
 		2B95C2BD2CB778630054F7E7 /* SessionsListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B95C2BC2CB778630054F7E7 /* SessionsListScreen.swift */; };
-		2B95C2C12CB778A90054F7E7 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B95C2C02CB778A90054F7E7 /* LoginScreen.swift */; };
 		2B95C2C52CB778EF0054F7E7 /* SessionDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B95C2C42CB778EF0054F7E7 /* SessionDetailsScreen.swift */; };
 		2B95C2C72CB779080054F7E7 /* FavoritesListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B95C2C62CB779080054F7E7 /* FavoritesListScreen.swift */; };
 		2B95C2F52CB8D2B10054F7E7 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B95C2F42CB8D2B10054F7E7 /* HomeScreen.swift */; };
+		2B95C2F82CB8DB360054F7E7 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B95C2C02CB778A90054F7E7 /* LoginScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,9 +31,8 @@
 		2B95C2A02CB74B680054F7E7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2B95C2A82CB74CE40054F7E7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2B95C2AA2CB74D5E0054F7E7 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
-		2B95C2AC2CB74D950054F7E7 /* SessionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionList.swift; sourceTree = "<group>"; };
+		2B95C2AC2CB74D950054F7E7 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		2B95C2AF2CB74DC10054F7E7 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
-		2B95C2B12CB74DD60054F7E7 /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
 		2B95C2B32CB74DE80054F7E7 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		2B95C2BC2CB778630054F7E7 /* SessionsListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsListScreen.swift; sourceTree = "<group>"; };
 		2B95C2C02CB778A90054F7E7 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
@@ -97,7 +95,6 @@
 			children = (
 				2B95C2A82CB74CE40054F7E7 /* User.swift */,
 				2B95C2AA2CB74D5E0054F7E7 /* Session.swift */,
-				2B95C2AC2CB74D950054F7E7 /* SessionList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -106,7 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				2B95C2AF2CB74DC10054F7E7 /* LoginManager.swift */,
-				2B95C2B12CB74DD60054F7E7 /* FavoritesManager.swift */,
+				2B95C2AC2CB74D950054F7E7 /* SessionManager.swift */,
 				2B95C2B32CB74DE80054F7E7 /* PersistenceManager.swift */,
 			);
 			path = Utils;
@@ -194,16 +191,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B95C2F82CB8DB360054F7E7 /* LoginScreen.swift in Sources */,
 				2B95C2AB2CB74D5E0054F7E7 /* Session.swift in Sources */,
-				2B95C2AD2CB74D950054F7E7 /* SessionList.swift in Sources */,
+				2B95C2AD2CB74D950054F7E7 /* SessionManager.swift in Sources */,
 				2B95C29C2CB74B670054F7E7 /* ContentView.swift in Sources */,
 				2B95C2B42CB74DE80054F7E7 /* PersistenceManager.swift in Sources */,
-				2B95C2B22CB74DD60054F7E7 /* FavoritesManager.swift in Sources */,
 				2B95C29A2CB74B670054F7E7 /* Group05_Nature_WalkApp.swift in Sources */,
 				2B95C2F52CB8D2B10054F7E7 /* HomeScreen.swift in Sources */,
 				2B95C2A92CB74CE40054F7E7 /* User.swift in Sources */,
 				2B95C2BD2CB778630054F7E7 /* SessionsListScreen.swift in Sources */,
-				2B95C2C12CB778A90054F7E7 /* LoginScreen.swift in Sources */,
 				2B95C2C52CB778EF0054F7E7 /* SessionDetailsScreen.swift in Sources */,
 				2B95C2B02CB74DC10054F7E7 /* LoginManager.swift in Sources */,
 				2B95C2C72CB779080054F7E7 /* FavoritesListScreen.swift in Sources */,

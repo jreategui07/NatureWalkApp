@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct Group05_Nature_WalkApp: App {
+    @StateObject private var sessionManager = SessionManager()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(sessionManager)
         }
     }
 }

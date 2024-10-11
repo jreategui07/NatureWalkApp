@@ -5,7 +5,7 @@
 //  Created by Jonathan Reátegui on 2024-10-09.
 //
 
-import Foundation
+import SwiftUI
 
 class User: Identifiable, Codable {
     var id = UUID()

@@ -68,7 +68,7 @@ struct LoginScreen: View {
             .navigationTitle("Welcome to Nature Walk")
             .navigationBarTitleDisplayMode(.inline)
             .navigationDestination(isPresented: $presentSessionsListScreen) {
-                SessionsListScreen(loginManager: loginManager, isLoggedIn: true)
+                HomeScreen(loginManager: loginManager, isLoggedIn: true)
             }
             .onAppear {   
                 loadSavedCredentials()
