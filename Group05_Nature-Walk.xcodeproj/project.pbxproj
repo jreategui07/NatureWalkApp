@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B4FC6E92CB8F84D00E80265 /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4FC6E82CB8F84D00E80265 /* enums.swift */; };
+		2B4FC6EB2CB96CB900E80265 /* FavoritesListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4FC6EA2CB96CB900E80265 /* FavoritesListScreen.swift */; };
 		2B95C29A2CB74B670054F7E7 /* Group05_Nature_WalkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B95C2992CB74B670054F7E7 /* Group05_Nature_WalkApp.swift */; };
 		2B95C29C2CB74B670054F7E7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B95C29B2CB74B670054F7E7 /* ContentView.swift */; };
 		2B95C29E2CB74B680054F7E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B95C29D2CB74B680054F7E7 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		2B4FC6E82CB8F84D00E80265 /* enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enums.swift; sourceTree = "<group>"; };
+		2B4FC6EA2CB96CB900E80265 /* FavoritesListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListScreen.swift; sourceTree = "<group>"; };
 		2B95C2962CB74B670054F7E7 /* Group05_Nature-Walk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Group05_Nature-Walk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B95C2992CB74B670054F7E7 /* Group05_Nature_WalkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group05_Nature_WalkApp.swift; sourceTree = "<group>"; };
 		2B95C29B2CB74B670054F7E7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				2B95C2C02CB778A90054F7E7 /* LoginScreen.swift */,
 				2B95C2F42CB8D2B10054F7E7 /* HomeScreen.swift */,
 				2B95C2BC2CB778630054F7E7 /* SessionsListScreen.swift */,
+				2B4FC6EA2CB96CB900E80265 /* FavoritesListScreen.swift */,
 				2B95C2C42CB778EF0054F7E7 /* SessionDetailsScreen.swift */,
 			);
 			path = Views;
@@ -200,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B95C2F82CB8DB360054F7E7 /* LoginScreen.swift in Sources */,
+				2B4FC6EB2CB96CB900E80265 /* FavoritesListScreen.swift in Sources */,
 				2B95C2AB2CB74D5E0054F7E7 /* Session.swift in Sources */,
 				2B95C2AD2CB74D950054F7E7 /* SessionManager.swift in Sources */,
 				2B95C29C2CB74B670054F7E7 /* ContentView.swift in Sources */,

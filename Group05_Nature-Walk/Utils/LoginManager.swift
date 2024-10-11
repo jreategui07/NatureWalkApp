@@ -19,7 +19,7 @@ class LoginManager: ObservableObject {
         
         if let user = predefinedUsers.first(where: { $0.email == email && $0.password == password }) {
             currentUser = user
-            persistenceManager.saveUser(user) // Guardamos el usuario en UserDefaults
+            persistenceManager.saveUser(user)
             return true
         }
         return false

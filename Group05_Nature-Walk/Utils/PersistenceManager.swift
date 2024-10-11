@@ -12,6 +12,7 @@ class PersistenceManager {
     
     private let userKey = "savedUser"
     private let sessionKey = "sessionList"
+    private let favoritesKey = "favoriteSessions"
     
     func saveUser(_ user: User) {
         if let encoded = try? JSONEncoder().encode(user) {
@@ -55,13 +56,17 @@ class PersistenceManager {
         }
     }
     
-    func updateSession(_ session: Session) {
-        var allSessions = getAllSessions()
-        if let index = allSessions.firstIndex(where: { $0.id == session.id }) {
-            allSessions[index] = session
-            if let encoded = try? JSONEncoder().encode(allSessions) {
-                userDefaults.set(encoded, forKey: sessionKey)
-            }
+    func saveFavoriteSessions(_ favorites: [Session]) {
+        if let encoded = try? JSONEncoder().encode(favorites) {
+            userDefaults.set(encoded, forKey: favoritesKey)
         }
+    }
+
+    func getFavoriteSessions() -> [Session] {
+        if let savedData = userDefaults.data(forKey: favoritesKey),
+           let decodedFavorites = try? JSONDecoder().decode([Session].self, from: savedData) {
+            return decodedFavorites
+        }
+        return []
     }
 }

@@ -24,7 +24,7 @@ struct HomeScreen: View {
                             Text("All Sessions")
                         }
                         .tag(HomeTab.allSessions)
-                    SessionsListScreen(filterFavorites: true)
+                    FavoritesListScreen()
                         .tabItem {
                             Image(systemName: "star.fill")
                             Text("Favorites Sessions")
